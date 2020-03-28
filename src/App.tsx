@@ -1,8 +1,14 @@
-import React from 'react';
+import React , { useState }from 'react';
 import logo from './logo.svg';
 import './App.css';
+import {Redirect, BrowserRouter, HashRouter} from 'react-router-dom';
 
-function App() {
+function App(props:any) {
+  const [redirect, setRedirect] = useState(false);
+
+  const abc=()=>{
+      setRedirect(true);
+  };
   return (
     <div className="App">
       <header className="App-header">
@@ -10,14 +16,12 @@ function App() {
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <HashRouter>
+            {redirect && <Redirect to="/home" />}
+        </HashRouter>
+        <button onClick={abc}>
+          Activer les lasers
+        </button>
       </header>
     </div>
   );
