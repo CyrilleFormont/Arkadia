@@ -1,21 +1,20 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './home.css';
+import Routing from "../../components/routing/routing";
 
 function Home() {
+    const [redirect, setRedirect] = useState(false);
+
     return (
         <div className="App">
             <header className="App-header">
                 <p>
                     Hello <code>src/App.tsx</code> and save to reload.
                 </p>
-                <a
-                    className="App-link"
-                    href="https://reactjs.org"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    Learn React
-                </a>
+                <button onClick={()=> setRedirect(true)}>
+                    Click to be redirected
+                </button>
+                {redirect && <Routing to={"/settings"}/>}
             </header>
         </div>
     );

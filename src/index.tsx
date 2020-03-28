@@ -2,21 +2,21 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
-import App from './App';
 import * as serviceWorker from './serviceWorker';
 import Home from "./screens/home/home";
 import {
     HashRouter,
     Route
 } from "react-router-dom";
+import Settings from "./screens/settings/settings";
+import App from "./App";
 ReactDOM.render(
   <React.StrictMode>
       <HashRouter>
-          <div>
               <Route path="/home" exact     component={ Home } />
-          </div>
+              <Route path="/settings" exact     component={ Settings } />
+              <App/>
       </HashRouter>
-    <App />
   </React.StrictMode>,
   document.getElementById('root')
 );
