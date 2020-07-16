@@ -4,7 +4,7 @@
   "description": "<your project description>",
   "author": "<author of app>",
   "build": {
-    "appId": "<com.your_app>"
+    "appId": "<com.your_app>"gg
   },
   "main": "public/electron.js",
   "homepage": "./",
