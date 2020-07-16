@@ -5,18 +5,20 @@ import './index.css';
 import * as serviceWorker from './serviceWorker';
 import Home from "./screens/home/home";
 import {
-    HashRouter,
+    HashRouter, Redirect,
     Route
 } from "react-router-dom";
 import Settings from "./screens/settings/settings";
 import App from "./App";
 ReactDOM.render(
   <React.StrictMode>
+
       <HashRouter>
-              <Route path="/home" exact     component={ Home } />
-              <Route path="/settings" exact     component={ Settings } />
-              <App/>
+          <Route path="/home" exact     component={ Home } />
+          <Route path="/settings" exact     component={ Settings } />
       </HashRouter>
+      <App/>
+
   </React.StrictMode>,
   document.getElementById('root')
 );
